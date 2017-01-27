@@ -9,11 +9,6 @@ var NoteType;
     NoteType[NoteType["List"] = 1] = "List";
     NoteType[NoteType["Mixed"] = 2] = "Mixed";
 })(NoteType || (NoteType = {}));
-var ListItemState;
-(function (ListItemState) {
-    ListItemState[ListItemState["Checked"] = 0] = "Checked";
-    ListItemState[ListItemState["Unchecked"] = 1] = "Unchecked";
-})(ListItemState || (ListItemState = {}));
 var CNoteSerializable = (function () {
     function CNoteSerializable() {
     }

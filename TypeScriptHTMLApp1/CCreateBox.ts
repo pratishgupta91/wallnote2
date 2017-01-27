@@ -27,7 +27,7 @@ class CCreateBox {
 
     // Add just one textbox
     PreProcess() {
-        this.m_noteElement = new CTextElement();
+        this.m_noteElement = new CTextElement("");
         this.m_container.appendChild(this.m_noteElement.GetElement());
     }
 
@@ -44,7 +44,7 @@ class CCreateBox {
 
         // Create list and add item with the content
         var listElem = new CListElement();
-        listElem.AddListItemElement();
+        listElem.AddListItemElement(content, ListItemState.Checked);
         this.m_noteElement = listElem;
         this.m_container.appendChild(this.m_noteElement.GetElement());
     }

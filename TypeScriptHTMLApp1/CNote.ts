@@ -4,11 +4,6 @@
     Mixed
 }
 
-enum ListItemState {
-    Checked,
-    Unchecked
-}
-
 class CNoteSerializable {
     Deserialize(json: string) {
         var jsonObj = JSON.parse(json);

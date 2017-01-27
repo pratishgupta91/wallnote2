@@ -24,7 +24,7 @@ var CCreateBox = (function () {
         this.PreProcess();
     }
     CCreateBox.prototype.PreProcess = function () {
-        this.m_noteElement = new CTextElement();
+        this.m_noteElement = new CTextElement("");
         this.m_container.appendChild(this.m_noteElement.GetElement());
     };
     CCreateBox.prototype.TransformToParagraphNote = function () {
@@ -36,7 +36,7 @@ var CCreateBox = (function () {
         var content = textElem.innerText;
         this.m_container.innerHTML = "";
         var listElem = new CListElement();
-        listElem.AddListItemElement();
+        listElem.AddListItemElement(content, ListItemState.Checked);
         this.m_noteElement = listElem;
         this.m_container.appendChild(this.m_noteElement.GetElement());
     };

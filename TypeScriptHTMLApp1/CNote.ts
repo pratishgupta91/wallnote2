@@ -9,8 +9,22 @@ enum ListItemState {
     Unchecked
 }
 
-abstract class CNote {
-    m_content: string;
+class CNoteSerializable {
+    Deserialize(json: string) {
+        var jsonObj = JSON.parse(json);
+        for (var propName in jsonObj) {
+            this[propName] = jsonObj[propName]
+        }
+    }
+
+    Serialize() {
+        return JSON.stringify(this);
+    }
+
+    constructor() { }
+}
+
+abstract class CNote extends CNoteSerializable {
     m_creationDate: string;
     m_title: string;
 
@@ -18,6 +32,7 @@ abstract class CNote {
     abstract GetNoteElement(): HTMLElement;
 
     constructor(creationDate: string, title: string) {
+        super();
         this.m_creationDate = creationDate;
         this.m_title = title;
     }
@@ -32,6 +47,8 @@ abstract class CNote {
 }
 
 class CParagraphNote extends CNote {
+    m_content: string;
+
     constructor(content: string, creationDate: string, title: string) {
         super(creationDate, title);
         this.m_content = content;
@@ -77,6 +94,7 @@ class CListItem {
 }
 
 class CListNote extends CNote {
+    private __name__ = "ListNote";
     m_items: Array<CListItem>;
 
     constructor(listItems: Array<CListItem>, creationDate: string, title: string) {

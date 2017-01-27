@@ -5,13 +5,22 @@
     <meta charset="utf-8" />
     <title>TypeScript HTML App</title>
     <link rel="stylesheet" href="app.css" type="text/css" />
+    <script src="CElement.js"></script>
     <script src="CNote.js"></script>
     <script src="CNoteRenderer.js"></script>
+    <script src="CDoneButton.js"></script>
+    <script src="CNoteDocument.js"></script>
+    <script src="CNoteControl.js"></script>
+    <script src="CCreateBox.js"></script>
     <script src="app.js"></script>
 </head>
 <body>
     <h1>TypeScript HTML App</h1>
-
+    <div id="note-creation">
+        <div id="note-content"></div>
+        <button id="toggle-type"></button>
+        <button id="done">Done</button>
+    </div>
     <div id="content"></div>
 </body>
 </html>
